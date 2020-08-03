@@ -18,7 +18,7 @@ export default class WelcomPage extends Component {
       NavigationUtil.restToHomePage({
         navigation: this.props.navigation,
       });
-    }, 3000);
+    }, 300);
   }
 
   componentWillMount() {

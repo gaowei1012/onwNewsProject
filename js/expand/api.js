@@ -1,5 +1,5 @@
 export const constant = {
     base_url: '',
-    getNewList: '',
+    getNewList: 'http://v.juhe.cn/toutiao/index',
 }
 
