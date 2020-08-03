@@ -21,7 +21,6 @@ const IndexPage = () => {
     ];
 
     const [index, setIndex] = useState(0)
-    const [tabs] = useState(null)
 
     const dispatch = useDispatch()
 
