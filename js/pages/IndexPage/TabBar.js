@@ -105,11 +105,12 @@ const styles = StyleSheet.create({
         color: "#d0648f"
     },
     line: {
-        width: px2dp(20),
+        width: px2dp(16),
         height: px2dp(2),
         backgroundColor: "#fbfafc",
         marginTop: px2dp(5),
         marginBottom: px2dp(2),
+        borderRadius: px2dp(6)
     },
     active2: {
         backgroundColor: "#d0648f"
