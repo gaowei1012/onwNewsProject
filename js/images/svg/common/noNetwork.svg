@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="156px" height="110px" viewBox="0 0 156 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>编组 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="93.7022401%" gradientTransform="translate(0.500000,0.000000),scale(0.416479,1.000000),rotate(-90.000000),scale(1.000000,1.829000),translate(-0.500000,-0.000000)" id="radialGradient-1">
+            <stop stop-color="#21C6A9" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </radialGradient>
+        <linearGradient x1="100%" y1="50%" x2="0.72582348%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#9EE1CE" offset="0%"></stop>
+            <stop stop-color="#E2F5F1" offset="100%"></stop>
+        </linearGradient>
+        <radialGradient cx="37.4416945%" cy="36.6012749%" fx="37.4416945%" fy="36.6012749%" r="58.8148516%" gradientTransform="translate(0.374417,0.366013),scale(0.956337,1.000000),rotate(85.722944),translate(-0.374417,-0.366013)" id="radialGradient-3">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#9EE1CE" offset="100%"></stop>
+        </radialGradient>
+        <ellipse id="path-4" cx="78.0350877" cy="5.00509002" rx="4.47552448" ry="4.28010824"></ellipse>
+        <filter x="-22.3%" y="-23.4%" width="144.7%" height="146.7%" filterUnits="objectBoundingBox" id="filter-5">
+            <feGaussianBlur stdDeviation="1.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.971916168   0 0 0 0 0.914596037  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <radialGradient cx="45.5322878%" cy="18.4628221%" fx="45.5322878%" fy="18.4628221%" r="43.3177008%" gradientTransform="translate(0.455323,0.184628),scale(0.749340,1.000000),rotate(73.793497),scale(1.000000,1.781473),translate(-0.455323,-0.184628)" id="radialGradient-6">
+            <stop stop-color="#EBFFFD" offset="0%"></stop>
+            <stop stop-color="#A0ECD9" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="35.2370201%" cy="30.3733083%" fx="35.2370201%" fy="30.3733083%" r="148.423549%" gradientTransform="translate(0.352370,0.303733),scale(0.346431,1.000000),rotate(23.764135),scale(1.000000,1.585992),translate(-0.352370,-0.303733)" id="radialGradient-7">
+            <stop stop-color="#F0FFF6" offset="0%"></stop>
+            <stop stop-color="#88D9C5" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="36.1537816%" cy="4.85093053%" fx="36.1537816%" fy="4.85093053%" r="176.233653%" gradientTransform="translate(0.361538,0.048509),scale(0.346431,1.000000),rotate(32.677033),translate(-0.361538,-0.048509)" id="radialGradient-8">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#9EE1DB" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="50%" cy="65.2812596%" fx="50%" fy="65.2812596%" r="66.7163894%" gradientTransform="translate(0.500000,0.652813),scale(0.399115,1.000000),rotate(90.000000),scale(1.000000,1.764727),translate(-0.500000,-0.652813)" id="radialGradient-9">
+            <stop stop-color="#F2FFF8" offset="0%"></stop>
+            <stop stop-color="#ADE6D6" offset="100%"></stop>
+        </radialGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-10">
+            <stop stop-color="#DCF4ED" offset="0%"></stop>
+            <stop stop-color="#96DCC8" offset="100%"></stop>
+        </linearGradient>
+        <ellipse id="path-11" cx="78.0350877" cy="54.3289474" rx="39.2865294" ry="15.6798246"></ellipse>
+        <filter x="-12.7%" y="-31.9%" width="125.5%" height="163.8%" filterUnits="objectBoundingBox" id="filter-12">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.619607843   0 0 0 0 0.882352941   0 0 0 0 0.807843137  0 0 0 1 0" type="matrix" in="shadowInnerInner1" result="shadowMatrixInner1"></feColorMatrix>
+            <feGaussianBlur stdDeviation="9.5" in="SourceAlpha" result="shadowBlurInner2"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner2" result="shadowOffsetInner2"></feOffset>
+            <feComposite in="shadowOffsetInner2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner2"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.619607843   0 0 0 0 0.882352941   0 0 0 0 0.807843137  0 0 0 1 0" type="matrix" in="shadowInnerInner2" result="shadowMatrixInner2"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner2"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="我的评论备份-2" transform="translate(-108.000000, -147.000000)">
+            <g id="编组-2" transform="translate(108.000000, 146.000000)">
+                <g id="编组-3" transform="translate(0.000000, 1.000000)">
+                    <polygon id="矩形" fill="url(#radialGradient-1)" opacity="0.303524926" points="45.6712885 45.4345718 110.267045 44.4649123 156.070175 109.464912 0 109.464912"></polygon>
+                    <rect id="矩形" fill="url(#linearGradient-2)" x="76.3508772" y="5.46148304" width="3.36842105" height="15.0526316"></rect>
+                    <g id="椭圆形">
+                        <use fill="url(#radialGradient-3)" fill-rule="evenodd" xlink:href="#path-4"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                    </g>
+                    <ellipse id="椭圆形" fill="url(#radialGradient-6)" cx="78.0350877" cy="35.5131579" rx="29.2947903" ry="21.9517544"></ellipse>
+                    <ellipse id="椭圆形" stroke="url(#radialGradient-8)" fill="url(#radialGradient-7)" cx="78.0350877" cy="44.2938596" rx="62.8653699" ry="21.4517544"></ellipse>
+                    <g id="椭圆形">
+                        <use fill="url(#radialGradient-9)" fill-rule="evenodd" xlink:href="#path-11"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-12)" xlink:href="#path-11"></use>
+                        <ellipse stroke="url(#linearGradient-10)" stroke-width="1" stroke-linejoin="square" cx="78.0350877" cy="54.3289474" rx="38.7865294" ry="15.1798246"></ellipse>
+                    </g>
+                </g>
+                <g id="编组" transform="translate(72.730488, 0.250111)"></g>
+            </g>
+        </g>
+    </g>
+</svg>

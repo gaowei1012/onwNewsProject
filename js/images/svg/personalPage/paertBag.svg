@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375px" height="403px" viewBox="0 0 375 403" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>编组</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="我的伙伴" transform="translate(0.000000, -252.000000)">
+            <g id="编组" transform="translate(-16.000000, 249.000000)">
+                <rect id="矩形" fill="#FFE96B" opacity="0.398879278" transform="translate(381.000000, 88.535534) rotate(-45.000000) translate(-381.000000, -88.535534) " x="366.5" y="74.0355339" width="29" height="29" rx="6"></rect>
+                <rect id="矩形备份-3" fill="#AEEDF7" transform="translate(23.500000, 18.500000) rotate(-45.000000) translate(-23.500000, -18.500000) " x="11" y="6" width="25" height="25" rx="6"></rect>
+                <path d="M379.343101,372 L382.394781,372 C387.612944,372 391.843101,376.230157 391.843101,381.44832 C391.843101,382.31992 391.722497,383.187328 391.48472,384.025867 L387.577548,397.804842 C386.052503,403.183039 381.141919,406.894781 375.55168,406.894781 L372.5,406.894781 C367.281837,406.894781 363.05168,402.664624 363.05168,397.446461 C363.05168,396.574862 363.172284,395.707453 363.410061,394.868914 L367.317234,381.089939 C368.842278,375.711742 373.752862,372 379.343101,372 Z" id="矩形备份-4" fill="#AEEDF7" opacity="0.315592448" transform="translate(377.447391, 389.447391) rotate(-79.000000) translate(-377.447391, -389.447391) "></path>
+                <rect id="矩形备份" fill="#FFB66B" opacity="0.398879278" transform="translate(25.000000, 190.000000) rotate(-45.000000) translate(-25.000000, -190.000000) " x="8" y="173" width="34" height="34" rx="17"></rect>
+                <rect id="矩形备份-2" fill="#FFC46B" opacity="0.30375744" x="356.5" y="278" width="21" height="21" rx="10.5"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="311px" height="138px" viewBox="0 0 311 138" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>编组 4备份</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="9.39834713%" y1="40.8156994%" x2="100%" y2="56.2979101%" id="linearGradient-1">
+            <stop stop-color="#20C6C6" offset="0%"></stop>
+            <stop stop-color="#46B6F5" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="311" height="138" rx="10"></rect>
+        <linearGradient x1="9.20472503%" y1="40.8796666%" x2="77.5958879%" y2="52.8110371%" id="linearGradient-4">
+            <stop stop-color="#2DD3D2" offset="0%"></stop>
+            <stop stop-color="#34AEF1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="9.20472503%" y1="40.8796666%" x2="76.5001997%" y2="52.6198857%" id="linearGradient-5">
+            <stop stop-color="#14FFFE" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#29ABF3" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="营业额明细" transform="translate(-32.000000, -496.000000)">
+            <g id="编组-4备份" transform="translate(32.000000, 496.000000)">
+                <g id="椭圆形">
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="蒙版" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                    <path d="M77.5,-31 C50.3987467,17.0454286 44.92406,45.1552332 61.07594,53.3294138 C73.0781327,59.5640324 85.0546205,63.0648393 129.498325,55.3539544 C173.942029,47.6430694 209.337622,44.6537168 219.44161,62.3347321 C229.58261,83.7550508 193.175245,104.652477 209.337622,117.326239 C225.5,130 268.067298,123.6518 295.613022,87.4655317 C313.976838,63.3413528 319.294665,22.8528422 311.566503,-34 L77.5,-31 Z" id="路径-3" fill="url(#linearGradient-4)" mask="url(#mask-3)"></path>
+                    <path d="M143.402047,-54.5970621 C121.694503,-16.1136677 117.309393,6.40170426 130.246714,12.9490539 C139.860222,17.9428543 149.453141,20.7469283 185.051629,14.5706689 C220.650117,8.39440964 249.001255,6 257.09434,20.1621275 C265.217071,37.3193597 236.055525,54.0577661 249.001255,64.2091867 C261.946985,74.3606073 296.04251,69.2758305 318.106065,40.2913781 C332.815102,20.9684099 337.074571,-11.4620495 330.884473,-57 L143.402047,-54.5970621 Z" id="路径-3备份" fill="url(#linearGradient-5)" mask="url(#mask-3)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

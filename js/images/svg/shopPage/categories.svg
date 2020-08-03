@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="31px" viewBox="0 0 30 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>编组 6</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="商城备份" transform="translate(-304.000000, -317.000000)" stroke-width="1.5">
+            <g id="编组-7" transform="translate(15.000000, 227.000000)">
+                <g id="编组-6" transform="translate(289.000000, 90.964286)">
+                    <path d="M5,12.6428571 L13.4642857,12.6428571 C15.12114,12.6428571 16.4642857,13.9860029 16.4642857,15.6428571 L16.4642857,25.0714286 C16.4642857,26.7282828 15.12114,28.0714286 13.4642857,28.0714286 L5,28.0714286 C3.34314575,28.0714286 2,26.7282828 2,25.0714286 L2,15.6428571 C2,13.9860029 3.34314575,12.6428571 5,12.6428571 Z" id="矩形" stroke="#6D47FF" fill="#FFDBDB" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="41,3"></path>
+                    <polygon id="三角形" stroke="#3372FF" stroke-linecap="round" stroke-linejoin="round" points="23.3279302 3 24.1785714 17.4642857 10.6785714 9.00754349"></polygon>
+                    <circle id="椭圆形" stroke="#03AA79" cx="23.2142857" cy="23.25" r="5.03571429"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
