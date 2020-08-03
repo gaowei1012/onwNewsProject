@@ -11,7 +11,6 @@ import {
 
 import IndexPage from '../pages/IndexPage/IndexPage';
 import AboutPage from '../pages/AnbutPage/AboutPage';
-import HotPage from '../pages/HotPage/HotPage';
 
 const TABS = {
   IndexPage: {
@@ -30,26 +29,10 @@ const TABS = {
       },
     },
   },
-  HotPage: {
-    screen: HotPage,
-    navigationOptions: {
-      tabBarLabel: '吃播视频',
-      tabBarIcon: ({tintColor, focused}) => {
-        return (
-          <TabBarItem
-            tintColor={tintColor}
-            focused={focused}
-            normalImage={require('../images/tab/shop.png')}
-            selectedImage={require('../images/tab/sele_shop.png')}
-          />
-        );
-      },
-    },
-  },
   AboutPage: {
     screen: AboutPage,
     navigationOptions: {
-      tabBarLabel: '店铺',
+      tabBarLabel: '个人中心',
       tabBarIcon: ({tintColor, focused}) => {
         return (
           <TabBarItem
