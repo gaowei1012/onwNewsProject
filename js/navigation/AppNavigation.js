@@ -11,7 +11,7 @@ import {
 
 import WelcomPage from '../pages/WelcomPage/WelcomPage';
 import IndexPage from '../pages/IndexPage/IndexPage';
-import AboutPage from '../pages/AnbutPage/AboutPage';
+import AboutPage from '../pages/AboutPage/AboutPage';
 import HomePage from '../pages/HomePage/HomePage';
 
 export const rootCom = 'Init';

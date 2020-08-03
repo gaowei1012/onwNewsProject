@@ -10,7 +10,7 @@ import {
 } from 'react-navigation';
 
 import IndexPage from '../pages/IndexPage/IndexPage';
-import AboutPage from '../pages/AnbutPage/AboutPage';
+import AboutPage from '../pages/AboutPage/AboutPage';
 
 const TABS = {
   IndexPage: {
