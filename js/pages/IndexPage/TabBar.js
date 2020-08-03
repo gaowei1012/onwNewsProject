@@ -97,11 +97,11 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     item: {
-        fontSize: px2dp(16),
-        color: "#858385",
+        fontSize: px2dp(14),
+        color: "#333",
     },
     active: {
-        fontSize: px2dp(16),
+        fontSize: px2dp(14),
         color: "#d0648f"
     },
     line: {

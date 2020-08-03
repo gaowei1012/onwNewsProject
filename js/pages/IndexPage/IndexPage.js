@@ -29,7 +29,7 @@ const IndexPage = () => {
     }, [])
 
     // 获取数据
-    const getData = useCallback((type) => {
+    const getData = useCallback((type = top) => {
         const url = `${constant.getNewList}?type=${type}&key=b76916adef25551ed9eb76af5a218d6f`
         dispatch(actions.getNewsData('GET', url))
     })

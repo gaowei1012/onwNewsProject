@@ -15,6 +15,7 @@ function getNewsData(method, url) {
         //     .catch(err => {
         //         handleErrorData(dispatch, err, get_news_list_fail)
         //     })
+        console.log('url', url)
         axios({
             url: url,
             method: method
