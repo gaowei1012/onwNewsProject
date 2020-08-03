@@ -13,11 +13,11 @@ const IndexPage = () => {
         {id: 3, name: '国内'},
         {id: 4, name: '国际'},
         {id: 5, name: '娱乐'},
-        {id: 5, name: '体育'},
-        {id: 5, name: '军事'},
-        {id: 5, name: '科技'},
-        {id: 5, name: '财经'},
-        {id: 5, name: '时尚'}
+        {id: 6, name: '体育'},
+        {id: 7, name: '军事'},
+        {id: 8, name: '科技'},
+        {id: 9, name: '财经'},
+        {id: 10, name: '时尚'}
     ];
 
     const [index, setIndex] = useState(0)
@@ -25,12 +25,17 @@ const IndexPage = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        const url = `${constant.getNewList}?type=top&key=b76916adef25551ed9eb76af5a218d6f`
-        dispatch(actions.getNewsData('GET', url))
+       getData()
     }, [])
 
-    const onChangeTab = useCallback((index, id) => {
+    // 获取数据
+    const getData = useCallback((type) => {
+        const url = `${constant.getNewList}?type=${type}&key=b76916adef25551ed9eb76af5a218d6f`
+        dispatch(actions.getNewsData('GET', url))
+    })
 
+    const onChangeTab = useCallback((index, id, type) => {
+        getData(type)
     })
 
     const list = useSelector(state => state.news)
@@ -47,7 +52,7 @@ const IndexPage = () => {
                 ref={e => this.tabs = e}
                 index={index}
                 data={data}
-                onChange={(index, id) => onChangeTab(index, id)}
+                onChange={(index, id, type) => onChangeTab(index, id, type)}
             />
             <Text>index  page</Text>
         </SafeAreaView>
