@@ -20,7 +20,7 @@ function getNewsData(method, url) {
             url: url,
             method: method
         }).then(result => {
-            const data = result.data.result;
+            const data = result.data.result.data;
             handleData(dispatch, data, get_news_list_success)
         }).catch(err => {
             handleErrorData(dispatch, err, get_news_list_fail)
