@@ -13,6 +13,7 @@ import WelcomPage from '../pages/WelcomPage/WelcomPage';
 import IndexPage from '../pages/IndexPage/IndexPage';
 import AboutPage from '../pages/AboutPage/AboutPage';
 import HomePage from '../pages/HomePage/HomePage';
+import Personal from '../pages/AboutPage/personal';
 
 export const rootCom = 'Init';
 
@@ -40,6 +41,12 @@ const MainNavigator = createStackNavigator({
     },
     AboutPage: {
         screen: AboutPage,
+        navigationOptions: {
+            header: null
+        }
+    },
+    Personal: {
+        screen: Personal,
         navigationOptions: {
             header: null
         }

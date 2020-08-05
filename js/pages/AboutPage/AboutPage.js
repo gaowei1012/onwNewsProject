@@ -1,8 +1,10 @@
 import React from 'react'
-import { View, StyleSheet, Text, SafeAreaView, TouchableOpacity } from 'react-native'
+import { View, StyleSheet, Text, SafeAreaView, TouchableOpacity, Alert } from 'react-native'
 import TopNavigationBar from '../../common/TopNavigationBar'
 import { px2dp } from '../../utils/px2dp'
 import SettingItem from './components/SettingItem'
+import NavigationUtil from '../../utils/NavigationUtil'
+import Modal from 'react-native-modal'
 
 // svg
 import Outline from '../../assets/svg/outline.svg'
@@ -13,10 +15,37 @@ import ArrowRight from '../../assets/svg/arrow_right.svg'
 class AboutPage extends React.PureComponent {
     state = {
         list: [
-            { id: 1, text: '信息1', icon: <Person/>, com: null },
-            { id: 2, text: '信息2', icon: <Person/>, com: null },
-            { id: 3, text: '信息3', icon: <Person/>, com: null }
-        ]
+            { id: 1, text: '信息1', icon: <Person />, com: null },
+            { id: 2, text: '信息2', icon: <Person />, com: null },
+            { id: 3, text: '信息3', icon: <Person />, com: null }
+        ],
+        menu: [
+            { id: 1, text: '账户设置', isShow: false, isAction: true, icon: <Person />, com: 'Personal' },
+            { id: 2, text: '系统更新', isShow: true, isAction: true, icon: <Download />, com: 'update' },
+            { id: 3, text: '关于我们', isShow: false, isAction: true, icon: <Outline />, com: '' }
+        ],
+        isVisible: false,
+    }
+    // go page 
+    goToPage=(com)=> {
+        if (com == '') {
+
+        } else if (com == 'update') {
+            this.handleModal()
+        } else {
+            NavigationUtil.goPage({}, com)
+        }
+    }
+    handleModal=()=> {
+        this.setState({
+            isVisible: true
+        })
+    }
+    // 取消
+    _cancle=()=> {
+        this.setState({
+            isVisible: false
+        })
     }
     _topHeader() {
         return (
@@ -24,9 +53,9 @@ class AboutPage extends React.PureComponent {
                 <View style={styles.topContainer}>
                     <View style={styles.avatarBox}>
                         <View style={styles.avatar} />
-                        <Text style={styles.username}>name</Text>
+                        <Text style={styles.username}>执念</Text>
                     </View>
-                    <ArrowRight width={27} height={27}/>
+                    <ArrowRight width={24} height={24} />
                 </View>
                 {/* 信息 */}
                 <View style={styles.topMenuBox}>
@@ -59,33 +88,52 @@ class AboutPage extends React.PureComponent {
     _renderContent() {
         return (
             <View style={styles.settingBox}>
-                <SettingItem
-                    onChange={this.goToPage}
-                    text={'账户设置'}
-                    isActive={true}
-                    isShow={false}
-                    icon={<Person/>}
-                />
-                 <SettingItem
-                    onChange={this.goToPage}
-                    text={'系统更新'}
-                    isActive={true}
-                    isShow={true}
-                    icon={<Download/>}
-                />
-                 <SettingItem
-                    onChange={this.goToPage}
-                    text={'关于我们'}
-                    isActive={true}
-                    isShow={false}
-                    icon={<Outline/>}
-                />
+                {this.state.menu.map(m => {
+                    return <SettingItem
+                        key={m.id}
+                        onChange={() => this.goToPage(m.com)}
+                        text={m.text}
+                        isActive={m.isAction}
+                        isShow={m.isShow}
+                        icon={m.icon}
+                    />
+                })}
             </View>
+        )
+    }
+    // 系统更新
+    _modal() {
+        return (
+            <Modal
+                isVisible={this.state.isVisible}
+            >
+                <View style={styles.modalBox}>
+                    <Text style={styles.updateTitle}>更新提示</Text>
+                    <Text style={styles.updateVersion}>当前可更新到最新版本墨珩1.0.19</Text>
+                    <View style={styles.updateFotter}>
+                        <TouchableOpacity 
+                            activeOpacity={1}
+                            onPress={this._cancle}
+                            style={[styles.btn, {borderRightColor: 'rgba(187, 187, 187, 1)', borderRightWidth: px2dp(.5)}]}
+                        >
+                            <Text style={styles.canleText}>取消</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            activeOpacity={1}
+                            onPress={this._dowload}
+                            style={styles.btn}
+                        >
+                            <Text style={styles.downloadText}>前往下载</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </Modal>
         )
     }
     render() {
         return (
             <SafeAreaView style={styles.indexContainer}>
+                {this._modal()}
                 {this._renderTopBar()}
                 {this._topHeader()}
                 {this._renderContent()}
@@ -140,6 +188,48 @@ const styles = StyleSheet.create({
     },
     settingBox: {
         alignSelf: 'center',
-        marginTop: px2dp(51)
+        marginTop: px2dp(41)
     },
+    modalBox: {
+        width: px2dp(259),
+        height: px2dp(144),
+        borderRadius: px2dp(13),
+        backgroundColor: '#FDFFFB',
+        alignSelf: 'center',
+        alignItems: 'center'
+    },
+    updateTitle: {
+        fontSize: px2dp(18),
+        color: '#030303',
+        marginTop: px2dp(21)
+    },
+    updateVersion: {
+        marginTop: px2dp(4),
+        fontSize: px2dp(14),
+        color: '#333'
+    },
+    updateFotter: {
+        position: 'absolute',
+        bottom: 0,
+        width: '100%',
+        height: px2dp(44),
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        borderTopWidth: px2dp(.5),
+        borderTopColor: 'rgba(187, 187, 187, 1)'
+    },
+    btn: {
+        width: px2dp(259/2),
+        height: px2dp(44),
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    canleText: {
+        color: '#E31E1E',
+        fontSize: px2dp(17)
+    },
+    downloadText: {
+        fontSize: px2dp(17),
+        color: '#4DAB6D'
+    }
 })
