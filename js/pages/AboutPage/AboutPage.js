@@ -20,9 +20,9 @@ class AboutPage extends React.PureComponent {
             { id: 3, text: '信息3', icon: <Person />, com: null }
         ],
         menu: [
-            { id: 1, text: '账户设置', isShow: false, isAction: true, icon: <Person />, com: 'Personal' },
+            { id: 1, text: '账户设置', isShow: false, isAction: true, icon: <Person />, com: '' },
             { id: 2, text: '系统更新', isShow: true, isAction: true, icon: <Download />, com: 'update' },
-            { id: 3, text: '关于我们', isShow: false, isAction: true, icon: <Outline />, com: '' }
+            { id: 3, text: '关于我们', isShow: false, isAction: true, icon: <Outline />, com: 'Personal' }
         ],
         isVisible: false,
     }
