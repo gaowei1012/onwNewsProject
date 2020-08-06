@@ -5,6 +5,7 @@ import { px2dp } from '../../utils/px2dp'
 import SettingItem from './components/SettingItem'
 import NavigationUtil from '../../utils/NavigationUtil'
 import Modal from 'react-native-modal'
+import {Toast} from '../../utils/Toast'
 
 // svg
 import Outline from '../../assets/svg/outline.svg'
@@ -24,7 +25,7 @@ class AboutPage extends React.PureComponent {
             { id: 3, text: '评论', icon: <Comment width={24} height={24} />, com: null }
         ],
         menu: [
-            { id: 1, text: '账户设置', isShow: false, isAction: true, icon: <Person />, com: '' },
+            { id: 1, text: '账户设置', isShow: false, isAction: true, icon: <Person />, com: 'Setting' },
             { id: 2, text: '系统更新', isShow: true, isAction: true, icon: <Download />, com: 'update' },
             { id: 3, text: '关于我们', isShow: false, isAction: true, icon: <Outline />, com: 'Personal' }
         ],
@@ -40,17 +41,23 @@ class AboutPage extends React.PureComponent {
             NavigationUtil.goPage({}, com)
         }
     }
+    // 显示 modal
     handleModal=()=> {
         this.setState({
             isVisible: true
         })
     }
-    // 取消
+    // 取消 modal
     _cancle=()=> {
         this.setState({
             isVisible: false
         })
     }
+
+    handlePage=()=> {
+        Toast.showToast('功能开发中')
+    }
+
     _topHeader() {
         return (
             <>
@@ -65,6 +72,8 @@ class AboutPage extends React.PureComponent {
                 <View style={styles.topMenuBox}>
                     {this.state.list.map(l => {
                         return <TouchableOpacity
+                            activeOpacity={1}
+                            onPress={this.handlePage}
                             style={styles.menuItemBox}
                         >
                             <View style={styles.menuIcon}>
