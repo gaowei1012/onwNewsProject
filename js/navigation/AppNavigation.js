@@ -14,6 +14,7 @@ import IndexPage from '../pages/IndexPage/IndexPage';
 import AboutPage from '../pages/AboutPage/AboutPage';
 import HomePage from '../pages/HomePage/HomePage';
 import Personal from '../pages/AboutPage/personal';
+import OneWebView from '../pages/IndexPage/WebView';
 
 export const rootCom = 'Init';
 
@@ -47,6 +48,12 @@ const MainNavigator = createStackNavigator({
     },
     Personal: {
         screen: Personal,
+        navigationOptions: {
+            header: null
+        }
+    },
+    OneWebView: {
+        screen: OneWebView,
         navigationOptions: {
             header: null
         }

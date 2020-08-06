@@ -5,6 +5,7 @@ import actions from './redux/action'
 import { constant } from '../../expand/api'
 import TabBar from './TabBar'
 import { px2dp } from '../../utils/px2dp'
+import NavigationUtil from '../../utils/NavigationUtil'
 
 class IndexPage extends React.PureComponent {
     state = {
@@ -36,6 +37,8 @@ class IndexPage extends React.PureComponent {
             <TouchableOpacity
                 activeOpacity={1}
                 onPress={() => {
+                    const url = item.url
+                    NavigationUtil.goPage({url}, 'OneWebView')
                     console.log('uerr', item.url)
                 }}
                 style={styles.listBox}
