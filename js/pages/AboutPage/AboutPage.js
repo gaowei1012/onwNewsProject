@@ -11,13 +11,17 @@ import Outline from '../../assets/svg/outline.svg'
 import Person from '../../assets/svg/person.svg'
 import Download from '../../assets/svg/download.svg'
 import ArrowRight from '../../assets/svg/arrow_right.svg'
+import Save from '../../assets/svg/save.svg'
+import Gy from '../../assets/svg/gy.svg'
+import Comment from '../../assets/svg/comment.svg'
+
 
 class AboutPage extends React.PureComponent {
     state = {
         list: [
-            { id: 1, text: '信息1', icon: <Person />, com: null },
-            { id: 2, text: '信息2', icon: <Person />, com: null },
-            { id: 3, text: '信息3', icon: <Person />, com: null }
+            { id: 1, text: '收藏', icon: <Save width={24} height={24}/>, com: null },
+            { id: 2, text: '公益', icon: <Gy width={24} height={24} />, com: null },
+            { id: 3, text: '评论', icon: <Comment width={24} height={24} />, com: null }
         ],
         menu: [
             { id: 1, text: '账户设置', isShow: false, isAction: true, icon: <Person />, com: '' },
