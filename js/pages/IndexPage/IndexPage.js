@@ -6,45 +6,49 @@ import constant from '../../expand/api'
 import TabBar from './TabBar'
 import { px2dp } from '../../utils/px2dp'
 import NavigationUtil from '../../utils/NavigationUtil'
+import Spinner from '../../utils/Spinner'
 
-const {getNewList} = constant
+const { getNewList } = constant
 
 class IndexPage extends React.PureComponent {
     state = {
-        data:[{ id: 1, name: '头条' },
-        { id: 2, name: '社会' },
-        { id: 3, name: '国内' },
-        { id: 4, name: '国际' },
-        { id: 5, name: '娱乐' },
-        { id: 6, name: '体育' },
-        { id: 7, name: '军事' },
-        { id: 8, name: '科技' },
-        { id: 9, name: '财经' },
-        { id: 10, name: '时尚' }],
+        data: [{ id: 1, name: '头条', type: 'top'},
+        { id: 2, name: '社会', type: 'shehui' },
+        { id: 3, name: '国内' , type: 'guonei'},
+        { id: 4, name: '国际', type: 'guoji' },
+        { id: 5, name: '娱乐' , type: 'yule'},
+        { id: 6, name: '体育' , type: 'tiyu'},
+        { id: 7, name: '军事' , type: 'junshi'},
+        { id: 8, name: '科技' , type: 'keji'},
+        { id: 9, name: '财经' , type: 'caijing'},
+        { id: 10, name: '时尚' , type: 'shishang'}],
         index: 0,
     }
     componentDidMount() {
+        this.getData()
+    }
+    
+    onChangeTab = (index, id, type) => {
+        this.getData(type)
+    }
+
+    getData = (type) => {
         const { getNewsData } = this.props
-        const url = `${getNewList}?type=top&key=b76916adef25551ed9eb76af5a218d6f`;
+        const url = `${getNewList}?type=${type}&key=b76916adef25551ed9eb76af5a218d6f`;
         getNewsData('GET', url)
     }
-    onChangeTab = () => {
-
-    }
     _renderItem(data) {
-        console.log('data', data)
         const item = data.item;
         return (
             <TouchableOpacity
                 activeOpacity={1}
                 onPress={() => {
                     const url = item.url
-                    NavigationUtil.goPage({url}, 'OneWebView')
-                    console.log('uerr', item.url)
+                    NavigationUtil.goPage({ url }, 'OneWebView')
                 }}
                 style={styles.listBox}
             >
-                <Image style={styles.image} source={{uri: item.thumbnail_pic_s}}/>
+                <Image style={styles.image} source={{ uri: item.thumbnail_pic_s }} />
                 <View>
                     <Text style={styles.title}>{item.title}</Text>
                     <Text style={styles.date}>{item.date}</Text>
@@ -54,9 +58,8 @@ class IndexPage extends React.PureComponent {
     }
     _renderContent() {
         const list = this.props.news;
-        console.log('list', list)
         if (!list) {
-            return <Text>加载中...</Text>
+            return <Spinner/>
         }
         const data = list.item;
         return (
@@ -81,7 +84,7 @@ class IndexPage extends React.PureComponent {
     }
 }
 
-export default connect(({news}) => ({
+export default connect(({ news }) => ({
     news
 }), dispatch => ({
     getNewsData(method, url) {

@@ -7,16 +7,21 @@ export default class TabBar extends React.Component {
     static defaultPorps = {
         data: [],
         index: -1,
+        id: null,
+        // name: null,
         onChange: () => { }
     }
     constructor(porps) {
         super(porps)
         this.state = {
-            index: this.props.index
+            index: this.props.index,
+            id: this.props.id,
+            type: null
         }
         this.scroll = null;
         this.laout_list = [];
         this.scrollW = 0;
+
     }
     render() {
         return (<View>
@@ -30,7 +35,7 @@ export default class TabBar extends React.Component {
                     <TouchableOpacity
                         key={item.id}
                         style={styles.itemBtn}
-                        onPress={() => this.setInex(index)}
+                        onPress={() => this.setInex(index, item.id, item.type)}
                         activeOpacity={1}
                         onLayout={e => this.setLout(e.nativeEvent.layout, index)}
                     >
@@ -55,7 +60,7 @@ export default class TabBar extends React.Component {
         if (nextProps.index != this.props.index) {
             this.setState({ index: nextProps.index });
             setTimeout(() => {
-                this.setInex(nextProps.index, false);
+                this.setInex(nextProps.index, nextProps.id, nextProps.type, false);
             }, 200)
         }
     }
@@ -65,8 +70,8 @@ export default class TabBar extends React.Component {
         this.scrollW += layout.width;
     }
 
-    setInex(index, bl = true) {
-        this.setState({ index });
+    setInex(index, id, type, bl = true) {
+        this.setState({ index, id, type});
         if (!this.scroll) return;
         let layout = this.laout_list[index];
         let rx = width / 2;
@@ -74,7 +79,7 @@ export default class TabBar extends React.Component {
         if (sx < 0) sx = 0;
         sx < this.scrollW - width && this.scroll.scrollTo({ x: sx, animated: bl });
         sx >= this.scrollW - width && this.scroll.scrollToEnd({ animated: bl });
-        this.props.onChange && this.props.onChange(index);
+        this.props.onChange && this.props.onChange(index, id, type);
         this.shouldUpdate = true;
     }
 }
@@ -94,7 +99,8 @@ const styles = StyleSheet.create({
         paddingTop: px2dp(2),
         flexDirection: 'column',
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        paddingVertical: px2dp(10)
     },
     item: {
         fontSize: px2dp(14),
