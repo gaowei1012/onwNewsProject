@@ -5,7 +5,7 @@ import { px2dp } from '../../utils/px2dp'
 import SettingItem from './components/SettingItem'
 import NavigationUtil from '../../utils/NavigationUtil'
 import Modal from 'react-native-modal'
-import {Toast} from '../../utils/Toast'
+import { Toast } from '../../utils/Toast'
 
 // svg
 import Outline from '../../assets/svg/outline.svg'
@@ -20,7 +20,7 @@ import Comment from '../../assets/svg/comment.svg'
 class AboutPage extends React.PureComponent {
     state = {
         list: [
-            { id: 1, text: '收藏', icon: <Save width={24} height={24}/>, com: null },
+            { id: 1, text: '收藏', icon: <Save width={24} height={24} />, com: null },
             { id: 2, text: '公益', icon: <Gy width={24} height={24} />, com: null },
             { id: 3, text: '评论', icon: <Comment width={24} height={24} />, com: null }
         ],
@@ -32,7 +32,7 @@ class AboutPage extends React.PureComponent {
         isVisible: false,
     }
     // go page 
-    goToPage=(com)=> {
+    goToPage = (com) => {
         if (com == '') {
 
         } else if (com == 'update') {
@@ -42,32 +42,39 @@ class AboutPage extends React.PureComponent {
         }
     }
     // 显示 modal
-    handleModal=()=> {
+    handleModal = () => {
         this.setState({
             isVisible: true
         })
     }
     // 取消 modal
-    _cancle=()=> {
+    _cancle = () => {
         this.setState({
             isVisible: false
         })
     }
 
-    handlePage=()=> {
+    handlePage = () => {
         Toast.showToast('功能开发中')
+    }
+
+    goToLogin = () => {
+        NavigationUtil.goPage({}, 'Login')
     }
 
     _topHeader() {
         return (
             <>
-                <View style={styles.topContainer}>
+                <TouchableOpacity
+                    onPress={this.goToLogin}
+                    activeOpacity={1}
+                    style={styles.topContainer}>
                     <View style={styles.avatarBox}>
                         <View style={styles.avatar} />
                         <Text style={styles.username}>执念</Text>
                     </View>
                     <ArrowRight width={24} height={24} />
-                </View>
+                </TouchableOpacity>
                 {/* 信息 */}
                 <View style={styles.topMenuBox}>
                     {this.state.list.map(l => {
@@ -124,10 +131,10 @@ class AboutPage extends React.PureComponent {
                     <Text style={styles.updateTitle}>更新提示</Text>
                     <Text style={styles.updateVersion}>当前可更新到最新版本墨珩1.0.19</Text>
                     <View style={styles.updateFotter}>
-                        <TouchableOpacity 
+                        <TouchableOpacity
                             activeOpacity={1}
                             onPress={this._cancle}
-                            style={[styles.btn, {borderRightColor: 'rgba(187, 187, 187, 1)', borderRightWidth: px2dp(.5)}]}
+                            style={[styles.btn, { borderRightColor: 'rgba(187, 187, 187, 1)', borderRightWidth: px2dp(.5) }]}
                         >
                             <Text style={styles.canleText}>取消</Text>
                         </TouchableOpacity>
@@ -232,7 +239,7 @@ const styles = StyleSheet.create({
         borderTopColor: 'rgba(187, 187, 187, 1)'
     },
     btn: {
-        width: px2dp(259/2),
+        width: px2dp(259 / 2),
         height: px2dp(44),
         alignItems: 'center',
         justifyContent: 'center'
