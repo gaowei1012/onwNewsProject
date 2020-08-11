@@ -174,7 +174,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         width: px2dp(335),
-        alignSelf: 'center'
+        alignSelf: 'center',
+        paddingHorizontal: px2dp(10)
     },
     avatarBox: {
         alignItems: 'center',
