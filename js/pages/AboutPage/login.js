@@ -6,6 +6,8 @@ import TopNavigationBar from '../../common/TopNavigationBar'
 import { connect } from 'react-redux'
 import actions from './redux/action'
 import constant from '../../expand/api'
+import { Button } from 'react-native-elements'
+import { Toast } from '../../utils/Toast'
 
 const { register } = constant
 
@@ -52,6 +54,16 @@ class Login extends React.PureComponent {
         this.setState({
             register: false
         })
+    }
+    // 切换到登录
+    _switchLogin = () => {
+        this.setState({
+            register: true
+        })
+    }
+    // 忘记密码
+    _forget=()=> {
+        Toast.showToast('功能开发中')
     }
     render() {
         const StatusBar = {
@@ -116,32 +128,32 @@ class Login extends React.PureComponent {
                     </TouchableOpacity>
                     <TouchableOpacity
                         activeOpacity={1}
-                        onPress={this.handleSubmit}
+                        onPress={this._forget}
                         style={styles.password}
                     >
                         <Text style={styles.passwordText}>忘记密码？</Text>
                     </TouchableOpacity>
-                </View> : null}
+                </View> : <TouchableOpacity
+                    activeOpacity={1}
+                    onPress={this._switchLogin}
+                    style={styles.footerBox}>
+                        <Text>登录</Text>
+                    </TouchableOpacity>}
             </>
         );
         const _footerBtn = (
             <>
-                {this.state.register ? <TouchableOpacity
+                {this.state.register ? <Button
+                    style={styles.submitBox}
                     onPress={this._submit}
-                    activeOpacity={1}
-                    style={styles.submitBox}
-                >
-                    <Text style={styles.submitText}>登录</Text>
-                </TouchableOpacity> : <TouchableOpacity
-                    onPress={this._register}
-                    activeOpacity={1}
-                    style={styles.submitBox}
-                >
-                        <Text style={styles.submitText}>注册</Text>
-                    </TouchableOpacity>}
+                    title='登录'
+                /> : <Button
+                        onPress={this._register}
+                        title='注册'
+                        style={styles.submitBox}
+                    />}
                 {_password}
             </>
-
         );
 
         return (
@@ -186,14 +198,9 @@ const styles = StyleSheet.create({
         borderRadius: px2dp(4)
     },
     submitBox: {
-        marginTop: px2dp(100),
+        marginTop: px2dp(80),
         width: px2dp(335),
-        height: px2dp(36),
-        alignSelf: 'center',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#ddd',
-        borderRadius: px2dp(3)
+        alignSelf: 'center'
     },
     submitText: {
         color: '#fff',
