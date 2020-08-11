@@ -1,6 +1,8 @@
-import {constant} from '../expand/api';
+import constant from '../expand/api';
 import axios from "axios";
 import qs from 'qs'
+
+const {base_url} = constant
 
 export function request(method, url, data = {}, Authorization) {
   let headers = {
@@ -9,7 +11,7 @@ export function request(method, url, data = {}, Authorization) {
   }
   return new Promise((resolve, reject) => {
     axios({
-      baseURL: constant.base_url,
+      baseURL: base_url,
       method: method,
       url: url,
       data: qs.stringify(data),

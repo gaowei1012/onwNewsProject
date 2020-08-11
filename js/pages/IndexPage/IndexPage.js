@@ -1,11 +1,13 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React from 'react'
 import { View, StyleSheet, Text, SafeAreaView, FlatList, TouchableOpacity, Image } from 'react-native'
 import { connect } from 'react-redux'
 import actions from './redux/action'
-import { constant } from '../../expand/api'
+import constant from '../../expand/api'
 import TabBar from './TabBar'
 import { px2dp } from '../../utils/px2dp'
 import NavigationUtil from '../../utils/NavigationUtil'
+
+const {getNewList} = constant
 
 class IndexPage extends React.PureComponent {
     state = {
@@ -20,11 +22,10 @@ class IndexPage extends React.PureComponent {
         { id: 9, name: '财经' },
         { id: 10, name: '时尚' }],
         index: 0,
-
     }
     componentDidMount() {
         const { getNewsData } = this.props
-        const url = `${constant.getNewList}?type=top&key=b76916adef25551ed9eb76af5a218d6f`;
+        const url = `${getNewList}?type=top&key=b76916adef25551ed9eb76af5a218d6f`;
         getNewsData('GET', url)
     }
     onChangeTab = () => {
