@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import NavigationUtil from '../../utils/NavigationUtil';
+import { width, hight } from '../../utils/px2dp';
 
 export default class WelcomPage extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ export default class WelcomPage extends Component {
       NavigationUtil.restToHomePage({
         navigation: this.props.navigation,
       });
-    }, 1000);
+    }, 3000);
   }
 
   componentWillMount() {
@@ -28,8 +29,8 @@ export default class WelcomPage extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.containerBox}>
-            <Text>欢迎页</Text>
-          {/* <Image style={{width: screentW, height: screentH}} source={require('../images/common/weclome.png')}/> */}
+            {/* <Text>欢迎页</Text> */}
+          <Image style={{width: width, height: hight}} source={require('../../images/common/home.jpg')}/>
         </View>
       </View>
     );
