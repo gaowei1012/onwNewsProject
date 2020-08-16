@@ -20,7 +20,7 @@ export default class Personal extends React.PureComponent {
         return (
             <SafeAreaView style={styles.personalContainer}>
                 {this._renderTopBar()}
-                <Text>个人中心</Text>
+                <Text style={styles.text}>个人中心</Text>
             </SafeAreaView>
         )
     }
@@ -29,5 +29,8 @@ export default class Personal extends React.PureComponent {
 const styles = StyleSheet.create({
     personalContainer: {
         flex: 1
+    },
+    text: {
+        textAlign: 'center'
     }
 })

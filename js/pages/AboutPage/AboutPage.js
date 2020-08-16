@@ -76,7 +76,7 @@ class AboutPage extends React.PureComponent {
                     <ArrowRight width={24} height={24} />
                 </TouchableOpacity>
                 {/* 信息 */}
-                <View style={styles.topMenuBox}>
+                {/* <View style={styles.topMenuBox}>
                     {this.state.list.map(l => {
                         return <TouchableOpacity
                             activeOpacity={1}
@@ -89,7 +89,7 @@ class AboutPage extends React.PureComponent {
                             <Text>{l.text}</Text>
                         </TouchableOpacity>
                     })}
-                </View>
+                </View> */}
             </>
         )
     }
@@ -129,7 +129,7 @@ class AboutPage extends React.PureComponent {
             >
                 <View style={styles.modalBox}>
                     <Text style={styles.updateTitle}>更新提示</Text>
-                    <Text style={styles.updateVersion}>当前可更新到最新版本墨珩1.0.19</Text>
+                    <Text style={styles.updateVersion}>当前可更新到最新版本1.0.19</Text>
                     <View style={styles.updateFotter}>
                         <TouchableOpacity
                             activeOpacity={1}

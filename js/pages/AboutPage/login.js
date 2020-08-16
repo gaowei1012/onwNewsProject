@@ -62,7 +62,7 @@ class Login extends React.PureComponent {
         })
     }
     // 忘记密码
-    _forget=()=> {
+    _forget = () => {
         Toast.showToast('功能开发中')
     }
     render() {
@@ -143,15 +143,16 @@ class Login extends React.PureComponent {
         );
         const _footerBtn = (
             <>
-                {this.state.register ? <Button
+                {this.state.register ? <View style={styles.submitBox}>
+                    <Button
+                        onPress={this._submit}
+                        title='登录'
+                    />
+                </View> : <View style={styles.submitBox}><Button
+                    onPress={this._register}
+                    title='注册'
                     style={styles.submitBox}
-                    onPress={this._submit}
-                    title='登录'
-                /> : <Button
-                        onPress={this._register}
-                        title='注册'
-                        style={styles.submitBox}
-                    />}
+                /></View>}
                 {_password}
             </>
         );
@@ -188,11 +189,11 @@ const styles = StyleSheet.create({
     textInputBox: {
         marginTop: px2dp(30),
         alignSelf: 'center',
-        width: px2dp(335)
+        width: px2dp(335),
     },
     textInput: {
         backgroundColor: '#ddd',
-        height: px2dp(30),
+        height: px2dp(36),
         marginBottom: px2dp(16),
         paddingLeft: px2dp(8),
         borderRadius: px2dp(4)
