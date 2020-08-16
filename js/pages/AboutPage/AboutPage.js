@@ -25,7 +25,7 @@ class AboutPage extends React.PureComponent {
             { id: 3, text: '评论', icon: <Comment width={24} height={24} />, com: null }
         ],
         menu: [
-            { id: 1, text: '账户设置', isShow: false, isAction: true, icon: <Person />, com: 'Setting' },
+            { id: 1, text: '账户设置', isShow: false, isAction: true, icon: <Person />, com: '' },
             { id: 2, text: '系统更新', isShow: true, isAction: true, icon: <Download />, com: 'update' },
             { id: 3, text: '关于我们', isShow: false, isAction: true, icon: <Outline />, com: 'Personal' }
         ],
@@ -34,7 +34,7 @@ class AboutPage extends React.PureComponent {
     // go page 
     goToPage = (com) => {
         if (com == '') {
-
+            Toast.showToast('功能开发中')
         } else if (com == 'update') {
             this.handleModal()
         } else {
