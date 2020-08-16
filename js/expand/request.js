@@ -1,23 +1,19 @@
 import constant from '../expand/api';
 import axios from "axios";
-import qs from 'qs'
 
-const {base_url} = constant
+const { base_url } = constant
 
-export function request(method, url, data = {}, Authorization) {
-  let headers = {
-    'Content-Type': 'application/x-www-form-urlencoded',
-    "Authorization": Authorization,
-  }
+export function request(url, method, data) {
+
   return new Promise((resolve, reject) => {
     axios({
       baseURL: base_url,
       method: method,
       url: url,
-      data: qs.stringify(data),
+      data: data,
       // headers,
       withCredentials: true,
-    //   headers: headers
+      //   headers: headers
     })
       .then((result) => {
         resolve(result);

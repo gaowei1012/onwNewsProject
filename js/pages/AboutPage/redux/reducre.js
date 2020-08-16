@@ -1,7 +1,12 @@
-import {get_register_success, get_register_fail} from './action'
+import {
+    get_register_success,
+    get_register_fail,
+    login_fail,
+    login_success
+} from './action'
 import {initState} from '../../../utils/asyncActionHandle'
 
-export function registerAction(state = initState, action) {
+function registerAction(state = initState, action) {
     switch(action.type) {
         case get_register_success:
             return {
@@ -15,4 +20,25 @@ export function registerAction(state = initState, action) {
         default:
             return state
     }
+}
+
+function loginAction(state = initState, action) {
+    switch(action.type) {
+        case login_success:
+            return {
+                ...state,
+                item: action.item
+            }
+        case login_fail:
+            return {
+                ...state
+            }
+        default:
+            return state
+    }
+}
+
+export {
+    registerAction,
+    loginAction,
 }

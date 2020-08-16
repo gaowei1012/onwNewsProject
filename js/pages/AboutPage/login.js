@@ -3,13 +3,14 @@ import { View, StyleSheet, Text, SafeAreaView, TextInput, TouchableOpacity } fro
 import { px2dp } from '../../utils/px2dp'
 import { GoBack } from '../../utils/GoBack'
 import TopNavigationBar from '../../common/TopNavigationBar'
+import NavigationUtil from '../../utils/NavigationUtil'
 import { connect } from 'react-redux'
 import actions from './redux/action'
 import constant from '../../expand/api'
 import { Button } from 'react-native-elements'
 import { Toast } from '../../utils/Toast'
 
-const { register } = constant
+const { register, login } = constant
 
 class Login extends React.PureComponent {
     state = {
@@ -48,6 +49,19 @@ class Login extends React.PureComponent {
             }
             getRegister(register, 'POST', data)
         }
+        // 等待注册成功信息返回，跳转个人中心页面
+        setTimeout(() => {
+            this.setState({register: true})
+        }, 300)
+    }
+    /* 登录 */
+    _submit = () => {
+        const { getLogin } = this.props
+        const data = {
+            "username": this.state.account,
+            "password": this.state.password
+        }
+        getLogin(login, 'POST', data)
     }
     // 切换到注册
     _switch = () => {
@@ -168,11 +182,14 @@ class Login extends React.PureComponent {
     }
 }
 
-export default connect(({ register }) => ({
-    register
+export default connect(({ register, login }) => ({
+    register, login
 }), dispatch => ({
     getRegister(url, method, data) {
         dispatch(actions.getRegister(url, method, data))
+    },
+    getLogin(url, method, data) {
+        dispatch(actions.getLogin(url, method, data))
     }
 }))(Login)
 

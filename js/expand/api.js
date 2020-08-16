@@ -1,8 +1,8 @@
 const constant = {
-    base_url: '',
+    base_url: 'http://127.0.0.1:7070',
     getNewList: 'http://v.juhe.cn/toutiao/index',
-    register: '',
-    login: ''
+    register: '/api/user/register',
+    login: '/api/user/login'
 }
 
 export default constant
