@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet, Text, SafeAreaView, TouchableOpacity, Alert } from 'react-native'
+import { View, StyleSheet, Text, SafeAreaView, TouchableOpacity, Image } from 'react-native'
 import TopNavigationBar from '../../common/TopNavigationBar'
 import { px2dp } from '../../utils/px2dp'
 import SettingItem from './components/SettingItem'
@@ -30,6 +30,7 @@ class AboutPage extends React.PureComponent {
             { id: 3, text: '关于我们', isShow: false, isAction: true, icon: <Outline />, com: 'Personal' }
         ],
         isVisible: false,
+        avatar: 'https://iph.href.lu/80x80?text=%E5%A4%B4%E5%83%8F&fg=ffffff&bg=9fc5e8'
     }
     // go page 
     goToPage = (com) => {
@@ -70,7 +71,8 @@ class AboutPage extends React.PureComponent {
                     activeOpacity={1}
                     style={styles.topContainer}>
                     <View style={styles.avatarBox}>
-                        <View style={styles.avatar} />
+                        {/* <View style={styles.avatar} /> */}
+                        <Image style={styles.avatar} source={{uri: this.state.avatar}}/>
                         <Text style={styles.username}>执念</Text>
                     </View>
                     <ArrowRight width={24} height={24} />
@@ -184,8 +186,7 @@ const styles = StyleSheet.create({
     avatar: {
         width: px2dp(64),
         height: px2dp(64),
-        borderRadius: px2dp(32),
-        backgroundColor: 'red'
+        borderRadius: px2dp(32)
     },
     username: {
         marginLeft: px2dp(12)
