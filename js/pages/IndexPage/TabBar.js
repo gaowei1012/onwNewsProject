@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Platform } from 'react-native'
 import { px2dp } from '../../utils/px2dp'
 import { width } from '../../utils/px2dp'
 
@@ -95,12 +95,13 @@ const styles = StyleSheet.create({
         height: px2dp(40)
     },
     itemBtn: {
-        paddingHorizontal: px2dp(12),
+        paddingHorizontal: px2dp(18),
         paddingTop: px2dp(2),
         flexDirection: 'column',
         justifyContent: "center",
         alignItems: "center",
-        paddingVertical: px2dp(10)
+        paddingVertical: px2dp(18),
+        marginTop: Platform.OS === 'ios' ? 0 : px2dp(8), // fix android
     },
     item: {
         fontSize: px2dp(14),
