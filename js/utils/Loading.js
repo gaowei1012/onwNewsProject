@@ -2,7 +2,7 @@ import React from 'react'
 import RootSilblings from 'react-native-root-siblings'
 import { View, StyleSheet, ActivityIndicator } from 'react-native'
 
-import {width, height, px2dp} from '../utils/px2dp'
+import {width, px2dp} from '../utils/px2dp'
 
 let sibling = undefined
 
@@ -30,14 +30,14 @@ export {
 const styles = StyleSheet.create({
     maskStyle: {
         position: 'absolute',
-        backgroundColor: 'rgba(0, 0, 0, 0.3)',
+        backgroundColor: 'rgba(0, 0, 0, 0)',
         width: width,
-        height: height,
+        height: '100%',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     backViewStyle: {
-        backgroundColor: '#111',
+        backgroundColor: '#222',
         width: px2dp(120),
         height: px2dp(100),
         justifyContent: 'center',

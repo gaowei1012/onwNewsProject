@@ -41,6 +41,7 @@ class Login extends React.PureComponent {
     _register = () => {
         const { getRegister } = this.props
         const { registerAccount, registerPassword, newPassword } = this.state
+        Loading.show()// 加载loading
         if (registerPassword !== newPassword) {
             return <Text>密码不匹配</Text>
         } else {
@@ -51,9 +52,14 @@ class Login extends React.PureComponent {
             getRegister(register, 'POST', data)
         }
         // 等待注册成功信息返回，返回注册页面
+        // 成功后隐藏loading
         setTimeout(() => {
-            this.setState({register: true})
-        }, 300)
+            let register = this.props.register.item
+            if (register.code == 1) {
+                Loading.hidden()
+                this.setState({register: true})
+            }
+        }, 500)
     }
     /* 登录 */
     _submit = () => {
@@ -70,7 +76,7 @@ class Login extends React.PureComponent {
                 Loading.hidden()
                 NavigationUtil.goBack(this.props.navigation)
             }
-        }, 8000)
+        }, 500)
     }
     // 切换到注册
     _switch = () => {
@@ -154,7 +160,7 @@ class Login extends React.PureComponent {
                         onPress={this._forget}
                         style={styles.password}
                     >
-                        <Text style={styles.passwordText}>忘记密码？</Text>
+                        {/* <Text style={styles.passwordText}>忘记密码？</Text> */}
                     </TouchableOpacity>
                 </View> : <TouchableOpacity
                     activeOpacity={1}
@@ -171,7 +177,7 @@ class Login extends React.PureComponent {
                         onPress={this._submit}
                         title='登录'
                     />
-                </View> : <View style={styles.submitBox}><Button
+                </View> : <View style={styles.registerBox}><Button
                     onPress={this._register}
                     title='注册'
                     style={styles.submitBox}
@@ -226,6 +232,11 @@ const styles = StyleSheet.create({
     },
     submitBox: {
         marginTop: px2dp(80),
+        width: px2dp(335),
+        alignSelf: 'center'
+    },
+    registerBox: {
+        marginTop: px2dp(30),
         width: px2dp(335),
         alignSelf: 'center'
     },
