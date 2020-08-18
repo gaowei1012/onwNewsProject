@@ -9,6 +9,7 @@ import actions from './redux/action'
 import constant from '../../expand/api'
 import { Button } from 'react-native-elements'
 import { Toast } from '../../utils/Toast'
+import { Loading } from '../../utils/Loading'
 
 const { register, login } = constant
 
@@ -49,7 +50,7 @@ class Login extends React.PureComponent {
             }
             getRegister(register, 'POST', data)
         }
-        // 等待注册成功信息返回，跳转个人中心页面
+        // 等待注册成功信息返回，返回注册页面
         setTimeout(() => {
             this.setState({register: true})
         }, 300)
@@ -62,6 +63,14 @@ class Login extends React.PureComponent {
             "password": this.state.password
         }
         getLogin(login, 'POST', data)
+        Loading.show()
+        setTimeout(() => {
+            let login = this.props.login.item
+            if (login.code == 1) {
+                Loading.hidden()
+                NavigationUtil.goBack(this.props.navigation)
+            }
+        }, 8000)
     }
     // 切换到注册
     _switch = () => {

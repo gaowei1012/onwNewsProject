@@ -7,27 +7,28 @@ import TabBar from './TabBar'
 import { px2dp } from '../../utils/px2dp'
 import NavigationUtil from '../../utils/NavigationUtil'
 import Spinner from '../../utils/Spinner'
+import { Loading } from '../../utils/Loading'
 
 const { getNewList } = constant
 
 class IndexPage extends React.PureComponent {
     state = {
-        data: [{ id: 1, name: '头条', type: 'top'},
+        data: [{ id: 1, name: '头条', type: 'top' },
         { id: 2, name: '社会', type: 'shehui' },
-        { id: 3, name: '国内' , type: 'guonei'},
+        { id: 3, name: '国内', type: 'guonei' },
         { id: 4, name: '国际', type: 'guoji' },
-        { id: 5, name: '娱乐' , type: 'yule'},
-        { id: 6, name: '体育' , type: 'tiyu'},
-        { id: 7, name: '军事' , type: 'junshi'},
-        { id: 8, name: '科技' , type: 'keji'},
-        { id: 9, name: '财经' , type: 'caijing'},
-        { id: 10, name: '时尚' , type: 'shishang'}],
+        { id: 5, name: '娱乐', type: 'yule' },
+        { id: 6, name: '体育', type: 'tiyu' },
+        { id: 7, name: '军事', type: 'junshi' },
+        { id: 8, name: '科技', type: 'keji' },
+        { id: 9, name: '财经', type: 'caijing' },
+        { id: 10, name: '时尚', type: 'shishang' }],
         index: 0,
     }
     componentDidMount() {
         this.getData()
     }
-    
+
     onChangeTab = (index, id, type) => {
         this.getData(type)
     }
@@ -59,15 +60,18 @@ class IndexPage extends React.PureComponent {
     _renderContent() {
         const list = this.props.news;
         if (!list) {
-            return <Spinner/>
+            return Loading.show()
+        } else {
+            Loading.hidden()
+            const data = list.item;
+            return (
+                <FlatList
+                    data={data}
+                    renderItem={this._renderItem}
+                />
+            )
         }
-        const data = list.item;
-        return (
-            <FlatList
-                data={data}
-                renderItem={this._renderItem}
-            />
-        )
+
     }
     render() {
         return (
